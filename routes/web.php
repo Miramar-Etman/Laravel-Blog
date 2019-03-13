@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', 'PostsController@index')->name('posts.index');
+Route::get('user/{name?}', function ($name) { return $name;});
 
