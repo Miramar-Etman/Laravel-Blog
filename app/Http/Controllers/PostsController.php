@@ -16,4 +16,16 @@ class PostsController extends Controller
     }
 
 
+
+    public function create()
+    {
+        // $users = User::all();
+        return view('posts.create');
+    }
+    public function store()
+    {
+        Post::create(request()->all());
+        return redirect()->route('posts.index');
+    }
+
 }	

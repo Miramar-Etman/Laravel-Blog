@@ -2,7 +2,7 @@
 
 @section('content')
 <br>
-  <a href="" class="btn btn-success"> Add Posts </a>
+  <a href="{{route('posts.create')}}" class="btn btn-success"> Add Posts </a>
 
   <table class="table">
   <thead>
@@ -20,7 +20,7 @@
     <tr>
       <th scope="row">{{$post->id}}</th>
       <td>{{$post->title}}</td>
-      <td>{{ isset($post->user) ? $post->user->name : 'Not Found'}}</td>
+      <td>{{$post->userName}}</td>
       <td>{{$post->created_at}}</td>
       <td>
       <a href="" class="btn btn-info">View </a>
