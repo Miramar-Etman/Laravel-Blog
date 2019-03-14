@@ -5,16 +5,16 @@
 {{ method_field('PATCH') }}
  <a href="{{route('posts.index')}}" class="btn btn-danger">Back</a>
 
-    <form action="{{route('posts.update',$id->id)}}" method="POST">
+    <form action="{{route('posts.update',$post->id)}}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">
             <label for="exampleInputEmail1">Title</label>
-            <input name="title" value="{{$id->title}}" type="text" class="form-control" >
+            <input name="title" value="{{$post->title}}" type="text" class="form-control" >
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Description</label>
-            <textarea name="description" class="form-control" > {{$id->description}}</textarea>
+            <textarea name="description" class="form-control" > {{$post->description}}</textarea>
         </div>
           </div>
            <div class="form-group">

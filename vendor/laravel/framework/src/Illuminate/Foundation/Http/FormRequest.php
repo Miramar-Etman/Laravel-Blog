@@ -195,7 +195,8 @@ class FormRequest extends Request implements ValidatesWhenResolved
      */
     public function messages()
     {
-        return [];
+        return [ 'title.required' => ' Title is required',
+        'description.required'  => 'Description is required',];
     }
 
     /**

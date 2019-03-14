@@ -2,9 +2,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Redirect;
+use App\Http\Requests\Post\StorePostRequest;
 use App\Post;
 use App\User;
-
 
 class PostsController extends Controller
 {
@@ -22,8 +22,7 @@ class PostsController extends Controller
         // $users = User::all();
         return view('posts.create');
     }
-    public function store()
-    {
+    public function store(StorePostRequest $request){
         Post::create(request()->all());
         return redirect()->route('posts.index');
     }
@@ -35,20 +34,20 @@ class PostsController extends Controller
         ]);
     }
 
-        public function edit(Post $id)
+        public function edit(Post $post)
     {
         // $post = Post::where('id',$post)->get()->first();
         //select * from posts where id=1 limit 1;
         // $post = Post::where('id',$post)->first();
         // $post = Post::find($post);
         return view('posts.edit', [
-            'id' => $id,
+            'post' => $post,
         ]);
     }
 
-    public function update ($id){
+    public function update ($post){
     		$data= request()->all();
-           	Post::where('id',$id)->update([
+           	Post::where('id',$post)->update([
            		'title'=> $data['title'],
            		'description'=> $data['description'],
            		'userName'=> $data['userName'],
