@@ -6,7 +6,7 @@
         @csrf
   <div class="form-group">
     <label for="exampleInputEmail1" > Title </label>
-    <input type="text" class="form-control" name="title" placeholder="Enter Title">
+    <input type="text" class="form-control"  name="title" placeholder="Enter Title">
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1"> Description </label>

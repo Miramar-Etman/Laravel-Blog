@@ -10,7 +10,7 @@
         @method('PUT')
         <div class="form-group">
             <label for="exampleInputEmail1">Title</label>
-            <input name="title" placeholder="{{$id->title}}" type="text" class="form-control" >
+            <input name="title" value="{{$id->title}}" type="text" class="form-control" >
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Description</label>
