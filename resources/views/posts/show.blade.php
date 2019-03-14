@@ -4,7 +4,7 @@
 
     <form >
   <div class="form-group">
-    <label> {{$post->userName}} </label>
+    <label> {{$post->user->name}} </label>
     <br>
     <label  > {{$post->title}} </label>
      <br>

@@ -22,14 +22,14 @@
     <label for="exampleFormControlTextarea1"> Description </label>
     <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
-           <div class="form-group">
-            <label for="exampleInputPassword1" >Post Creator</label>
-            <select class="form-control" name="userName">
-                    <option  name="userName" value="Miramar"> Miramar </option>
-                    <option  name="userName" value= "Nada"> Nada </option>
-            </select>
-
-        </div>
+<div class="form-group">
+           <label for="exampleInputPassword1"> Post Creator</label>
+           <select class="form-control" name="user_id">
+               @foreach($users as $user)
+                   <option value= "{{$user->id}}"> {{$user->name}} </option>
+               @endforeach
+           </select>
+       </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
