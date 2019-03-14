@@ -1,8 +1,7 @@
  @extends('layouts.app')
 
  @section('content')
- {{ csrf_field() }}
-{{ method_field('PATCH') }}
+
  <a href="{{route('posts.index')}}" class="btn btn-danger">Back</a>
 
     <form action="{{route('posts.update',$post->id)}}" method="POST">
@@ -17,6 +16,8 @@
             </ul>
         </div>
     @endif
+
+    
         <div class="form-group">
             <label for="exampleInputEmail1">Title</label>
             <input name="title" value="{{$post->title}}" type="text" class="form-control" >
@@ -25,7 +26,6 @@
             <label for="exampleInputPassword1">Description</label>
             <textarea name="description" class="form-control" > {{$post->description}}</textarea>
         </div>
-          </div>
     <div class="form-group">
            <label for="exampleInputPassword1"> Post Creator</label>
            <select class="form-control" name="user_id">
@@ -34,9 +34,8 @@
                @endforeach
            </select>
        </div>
-
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <input name="submit" type="submit" value="submit" class="btn btn-primary">
     </form>
+
 
 @endsection

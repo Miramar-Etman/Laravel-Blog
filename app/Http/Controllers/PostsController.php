@@ -28,6 +28,7 @@ class PostsController extends Controller
     }
     public function store(StorePostRequest $request){
         Post::create(request()->all());
+       // dd($request);
         return redirect()->route('posts.index');
     }
 
@@ -54,13 +55,15 @@ class PostsController extends Controller
 
     public function update (UpdatePostRequest $request,$post){
     		$data= request()->all();
+           //dd(Post::where('id',$post)->slu);
+            //$post->slug = null;
            	Post::where('id',$post)->update([
            		'title'=> $data['title'],
            		'description'=> $data['description'],
            		'user_id'=> $data['user_id'],
            	]);
 
-           	return redirect('posts');
+           	return redirect()->route('posts.index');
     }
 
         public function destroy($id)
@@ -68,9 +71,8 @@ class PostsController extends Controller
         // delete
         $post = Post::find($id);
         $post->delete();
-		 return view('posts.index', [
-            'posts' => Post::all()
-        ]);
+		  return redirect()->route('posts.index');
+        
     }
 
 
