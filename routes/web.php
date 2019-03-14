@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' => 'auth'], function () {
 Route::get('/posts', 'PostsController@index')->name('posts.index')-> middleware('auth');
 Route::get('/posts/create', 'PostsController@create')->name('posts.create');
 Route::get('/posts/{post}', 'PostsController@show')->name('posts.show');
@@ -22,5 +23,6 @@ Route::get('/posts/{post}/edit', 'PostsController@edit')->name('posts.edit');
 Route::post('/posts/store', 'PostsController@store')->name('posts.store');
 Route::get('/posts/post/{id}', 'PostsController@destroy')->name('posts.destroy');
 Route::put('/posts/{id}', 'PostsController@update')->name('posts.update');
+});
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home','PostsController@index')->name('home');
