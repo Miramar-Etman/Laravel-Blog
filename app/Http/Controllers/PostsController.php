@@ -35,15 +35,26 @@ class PostsController extends Controller
         ]);
     }
 
-        public function edit(Post $post)
+        public function edit(Post $id)
     {
         // $post = Post::where('id',$post)->get()->first();
         //select * from posts where id=1 limit 1;
         // $post = Post::where('id',$post)->first();
         // $post = Post::find($post);
         return view('posts.edit', [
-            'post' => $post,
+            'id' => $id,
         ]);
+    }
+
+    public function update ($id){
+    		$data= request()->all();
+           	Post::where('id',$id)->update([
+           		'title'=> $data['title'],
+           		'description'=> $data['description'],
+           		'userName'=> $data['userName'],
+           	]);
+
+           	return redirect('posts');
     }
 
         public function destroy($id)
