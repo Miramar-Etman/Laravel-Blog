@@ -38,7 +38,7 @@
 
         </style>
     <div id="app">
-        <nav class="navbar navbar-expand-md  navbar-light navbar-Blog">
+        <nav class="navbar navbar-expand-md  navbar-light navbar-Blog text-white">
             <div class="container">
                 <a  style="font-size:30px;"class="navbar-brand  text-white" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -54,7 +54,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" style="font-size:30px;color:white;">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -66,12 +66,12 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li  class="nav-item dropdown text-white" >
+                                <a id="navbarDropdown text-white" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" style="color:white;" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right bg-info" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
