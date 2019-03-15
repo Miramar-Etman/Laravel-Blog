@@ -19,13 +19,13 @@
   </thead>
   <tbody>
     @foreach($posts as $post)
-    <tr style="text-align: center;">
+    <tr style="text-align:center;">
       <th scope="row">{{$post->id}}</th>
       <td>{{$post->title}}</td>
-      <td>{{isset($post->user)?$post->user->name:'Not Found'}}</td>
-      <td>{{$post->created_at}}</td>
+      <td>{{ isset($post->user_id) ? $post->user->name : 'Not Found'}}</td>
+      <td>{{$post->created_at-> toDateString()}} </td>
       <td>{{$post->slug}}</td>
-<td>
+      <td>
       <a href="{{route('posts.show',$post->id)}}" class="btn btn-info">View </a>
       <a href="{{route('posts.edit',$post->id)}}" class="btn btn-warning">Edit </a>
       <a href="{{route('posts.destroy',$post->id)}}" onclick="return delValidate();" class="btn btn-danger">Delete </a> </td>
@@ -40,7 +40,7 @@
     </tr>
     @endforeach
   </tbody>
-  <div style="margin-left: 530px;"> {{ $posts->links() }} </div>
+  <div style="margin-left:530px;"> {{ $posts->links() }} </div>
 </table>
 </div>
 @endsection

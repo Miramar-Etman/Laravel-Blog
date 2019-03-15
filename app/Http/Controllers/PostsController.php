@@ -11,9 +11,10 @@ use App\User;
 class PostsController extends Controller
 {
     public function index()
-    {   $posts = DB::table('posts')->simplePaginate(5);
+    {
+    // {   $posts = DB::table('posts')->simplePaginate(5);
         return view('posts.index', [
-            'posts' => $posts
+            'posts' => Post::simplePaginate(5)
            
         ]);
     }
@@ -43,12 +44,8 @@ class PostsController extends Controller
 
         public function edit(Post $post)
     {
-        // $post = Post::where('id',$post)->get()->first();
-        //select * from posts where id=1 limit 1;
-        // $post = Post::where('id',$post)->first();
-        // $post = Post::find($post);
          $users = User::all();
-        return view('posts.edit', [
+         return view('posts.edit', [
             'post' => $post,
              'users' => $users,
         ]);

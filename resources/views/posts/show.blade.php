@@ -19,6 +19,6 @@
        <br>
         <label style="color:red;margin-top: 20px;">Post Created At: </label>
         <br>
-        <label > {{$post->created_at}} </label>
+        <label > {{$post->created_at -> format('l js \of F Y h:i:s A')}} </label>
       </div>
 </body>

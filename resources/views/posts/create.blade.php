@@ -1,7 +1,7 @@
  @extends('layouts.app')
  @section('content')
 
- <a href="{{route('posts.index')}}" class="btn btn-secondary">Back</a>
+ <a style="margin-left:200px;margin-top:20px;" href="{{route('posts.index')}}" class="btn btn-secondary">Back</a>
 
     <form action="{{route('posts.store')}}" method="POST">
         @csrf
@@ -14,8 +14,10 @@
             </ul>
         </div>
     @endif
+        <div class="container" style="width:600px; background-color:white;opacity: 0.7;color:black;border-radius: 15px;">
+          <label style="margin-top:30px;color:red;font-size: 25px;"> Add Post </label>
   <div class="form-group">
-    <label for="exampleInputEmail1" > Title </label>
+    <label  for="exampleInputEmail1" > Title </label>
     <input type="text" class="form-control"  name="title" placeholder="Enter Title">
   </div>
   <div class="form-group">
@@ -31,7 +33,8 @@
            </select>
        </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button style="margin-bottom:30px;font-size: 25px;" type="submit" class="btn btn-primary">Submit</button>
+</div>
 </form>
 
 

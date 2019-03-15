@@ -2,9 +2,9 @@
 
  @section('content')
 
- <a href="{{route('posts.index')}}" class="btn btn-danger">Back</a>
+ <a style="margin-left:300px;"href="{{route('posts.index')}}" class="btn btn-danger">Back</a>
 
-    <form action="{{route('posts.update',$post->id)}}" method="POST">
+    <form  action="{{route('posts.update',$post->id)}}" method="POST">
         @csrf
         @method('PUT')
             @if ($errors->any())
@@ -17,9 +17,9 @@
         </div>
     @endif
 
-    
+    <div class="container" style="width:600px; background-color:white;opacity: 0.7;color:black;border-radius: 15px;">
         <div class="form-group">
-            <label for="exampleInputEmail1">Title</label>
+            <label style="margin-top:30px;" for="exampleInputEmail1">Title</label>
             <input name="title" value="{{$post->title}}" type="text" class="form-control" >
         </div>
         <div class="form-group">
@@ -34,7 +34,8 @@
                @endforeach
            </select>
        </div>
-    <input name="submit" type="submit" value="submit" class="btn btn-primary">
+    <input style="margin-bottom: 30px;font-size: 25px;" name="submit" type="submit" value="submit" class="btn btn-primary">
+  </div>
     </form>
 
 
