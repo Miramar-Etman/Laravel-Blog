@@ -32,7 +32,7 @@ public function messages()
 {
     return [
         'title.required' => 'A title is required',
-         'description.required' => 'A Description is required
+         'description.required' => 'A Description is required'
     ];
 }
 
