@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\Redirect;
 use App\Http\Requests\Post\StorePostRequest;
@@ -10,9 +11,9 @@ use App\User;
 class PostsController extends Controller
 {
     public function index()
-    {
+    {   $posts = DB::table('posts')->simplePaginate(5);
         return view('posts.index', [
-            'posts' => Post::all()
+            'posts' => $posts
            
         ]);
     }
