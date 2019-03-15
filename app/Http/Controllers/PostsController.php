@@ -55,8 +55,10 @@ class PostsController extends Controller
 
     public function update (UpdatePostRequest $request,$post){
     		$data= request()->all();
-           //dd(Post::where('id',$post)->slu);
-            //$post->slug = null;
+           //dd($post);
+            //$slug = Post::find($post);
+            //$slug->slug= NULL;
+        //   dd($slug->slug);
            	Post::where('id',$post)->update([
            		'title'=> $data['title'],
            		'description'=> $data['description'],

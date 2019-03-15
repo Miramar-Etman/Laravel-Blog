@@ -4,20 +4,27 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel Blog ITI </title>
+        <title >Laravel Blog ITI </title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Acme|Pacifico" rel="stylesheet">
         <!-- Styles -->
         <style>
+            head {
+                color: white;
+
+
+            }
             html, body {
                 background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
+                color: white;
+                font-family: 'Pacifico', cursive;
+                background-image: url({{URL('/images/Background.jpg')}});
                 height: 100vh;
                 margin: 0;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
 
             .full-height {
@@ -49,13 +56,14 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 15px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+
             }
 
             .m-b-md {
@@ -84,7 +92,7 @@
                     Laravel Blog ITI
                 </div>
 
-               
+
             </div>
         </div>
     </body>
