@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Socialite;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -32,8 +32,23 @@ class LoginController extends Controller
      *
      * @return void
      */
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
+
+     public function redirectToProvider()
+    {
+        return Socialite::driver('github')->redirect();
+    }
+
+    public function handleProviderCallback()
+
+    {   $user = Socialite::driver('github')->user();
+
+
+        // $user->token;
+    }
+
 }

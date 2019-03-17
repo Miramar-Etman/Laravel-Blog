@@ -34,10 +34,10 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
-     'github' => [
-    'client_id' => env('GITHUB_CLIENT_ID'),
-    'client_secret' => env('GITHUB_CLIENT_SECRET'),
-    'redirect' => 'http://your-callback-url',
+ 'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID','6a48fdbdd54a0d48d6fc'),
+    'client_secret' => env('GITHUB_CLIENT_SECRET','7e2127b8d36395532a88185ca1a8365b38624212'), 
+    'redirect' => 'http://login/github/callback',
     ],
 
     'stripe' => [

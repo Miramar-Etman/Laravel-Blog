@@ -53,9 +53,12 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button style="font-size:15px;"type="submit" class="btn btn-lg btn-primary text-uppercase">
+
+                                <button style="margin-bottom:10px;font-size:15px;"type="submit" class="btn btn-lg btn-primary text-uppercase">
                                     {{ __('Login') }}
                                 </button>
+                                <br>
+                                <a href="/login/github" class="btn btn-success" style="font-size:20px;margin-bottom: 20px; "> Lgin GitHub </a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
